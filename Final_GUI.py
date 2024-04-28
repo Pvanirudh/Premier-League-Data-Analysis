@@ -326,6 +326,34 @@ class PlotWindow_red_card(QMainWindow):
         label.setPixmap(pixmap_scaled)  # Set the scaled pixmap
         label.setAlignment(Qt.AlignCenter)  # Center the image in the window
         self.setCentralWidget(label)  # Set the label as the central widget
+        
+#Class for heat map
+class PlotWindow_heat_map(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Heat Map")
+        self.setGeometry(100, 100, 800, 600)  # Set window size
+        self.display_plot()  # Display the plot
+        self.back_button = QPushButton("Back", self)  # Add a back button
+        self.back_button.setFont(QFont("Arial", 10, QFont.Bold))
+        self.back_button.clicked.connect(self.close)  # Back button functionality
+        self.back_button.setGeometry(10, 10, 60, 30)  # Position of the back button
+        self.back_button.setStyleSheet("QPushButton { color: white; background-color: #333; }")
+    def display_plot(self):
+        # Run the external Python script to generate the plot
+        subprocess.run(["python", "Heat_Map.py"])  # Adjust script name if needed
+        # Load the scatter plot image
+        label = QLabel(self)
+        pixmap = QPixmap("football_field_heatmap.jpg")
+        # Scale the image to fit the window while maintaining the aspect ratio
+        pixmap_scaled = pixmap.scaled(
+            self.size(),  # Scale to the size of the window
+            Qt.KeepAspectRatio,  # Keep the aspect ratio
+            Qt.SmoothTransformation  # Smooth scaling for better quality
+        )
+        label.setPixmap(pixmap_scaled)  # Set the scaled pixmap
+        label.setAlignment(Qt.AlignCenter)  # Center the image in the window
+        self.setCentralWidget(label)  # Set the label as the central widget
 
         
 # Functions to create specific windows 
@@ -370,6 +398,10 @@ def create_team_Red():
     plot_window = PlotWindow_red_card()
     plot_window.show()
     open_windows.append(plot_window)
+def create_team_heat():
+    plot_window = PlotWindow_heat_map()
+    plot_window.show()
+    open_windows.append(plot_window)
 
 # Define the WelcomeScreen class
 class WelcomeScreen(QWidget):
@@ -407,7 +439,7 @@ set_background(main_window, 'path_to_home_background.jpg')  # Set background for
 layout = QVBoxLayout(main_window)
 
 # List of buttons and their respective functions
-button_texts = ["Season Stats", "Player Profile",  "Team Stats", "Player Comparison", "Passing Type", "Defense Scatter Plot", "Defensive Stats", "Weekly Scoreline", "Yellow Cards", "Red Cards"]
+button_texts = ["Season Stats", "Player Profile",  "Team Stats", "Player Comparison", "Passing Type", "Defense Scatter Plot", "Defensive Stats", "Weekly Scoreline", "Yellow Cards", "Red Cards", "Heat Map"]
 button_functions = [
     create_season_stats_window,
     create_player_profile_type_script_window,
@@ -418,7 +450,8 @@ button_functions = [
     create_player_Defense_stats,
     create_weekly_chart,
     create_team_Yellow,
-    create_team_Red
+    create_team_Red,
+    create_team_heat
 ]
 
 # Add buttons to the main dashboard
