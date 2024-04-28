@@ -30,7 +30,7 @@ The Premier League Dashboard aims to offer football enthusiasts a user-friendly 
 ### Development Tools
 - **Framework**: PyQt5
 - **Programming Language**: Python
-- **Libraries**: Pandas (for CSV data handling), PyQt5 (for GUI components)
+- **Libraries**: Pandas (for CSV data handling), seaborn, Matplotlib, Numpy, PyQt5 (for GUI components)
 ### Main Components
 - **Main Dashboard**: The central point for navigating the application, with clickable buttons leading to specific functionalities.
 - **Sub-Windows**: Independent windows displaying data or performing specific actions, such as:
@@ -57,6 +57,7 @@ The application allows users to:
 ## Future Improvements
 - **Additional Features**: Add more analytical tools and visualizations for in-depth Premier League analysis.
 - **Performance Optimization**: Improve data handling to ensure smooth application performance.
+- **Add Player images for better visualization
 - **User Feedback Integration**: Gather feedback from users to enhance the application's functionality and user experience.
 ## Conclusion
 The Premier League Dashboard GUI application offers an engaging way to explore and analyze Premier League statistics. With its interactive features and visually appealing design, the application provides a valuable resource for football enthusiasts. Future improvements aim to expand functionality and further enhance the user experience.
