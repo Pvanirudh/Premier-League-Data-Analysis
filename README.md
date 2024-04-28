@@ -35,9 +35,16 @@ The Premier League Dashboard aims to offer football enthusiasts a user-friendly 
 - **Main Dashboard**: The central point for navigating the application, with clickable buttons leading to specific functionalities.
 - **Sub-Windows**: Independent windows displaying data or performing specific actions, such as:
   - **CSVDataDisplayApp**: Displays CSV-based data.
-  - **Player Profile**: Runs a specific script to analyze player statistics.
+  - **Season Stats**: Runs a specific script and provides a bar chart of Teams with most assists and most goals.
+  - **Team Stats**: Runs a specific script to analyze player statistics.
+  - **Player Comparison**: Runs a specific script to analyze player goals statistics.
+  - **Passing type**: Runs a specific script to provide a drop down player selection and generates a pie chart with passing metrics.
   - **Defense Scatter Plot**: Generates scatter plots for defensive statistics.
-  - **Team Stats**: Displays various team statistics.
+  - **Defensive Stats**: Displays defensive statistics bar chart.
+  - **Weekly Scoreline**: Runs a specific script to provide analysis games on a weekly basis.
+  - **Yellow card**: Runs a specific script to analyze team yellow cards.
+  - **Red card**: Runs a specific script to analyze team yellow cards.
+  - **Heat Map**: Runs a specific script to track the movement of players.
 ### User Interface Design
 - **Backgrounds and Styling**: Custom background images for the main dashboard and other screens, providing a unified aesthetic.
 - **Interactive Widgets**: A variety of widgets, such as `QPushButton`, `QVBoxLayout`, `QLabel`, `QMainWindow`, and `QComboBox`, for user interaction.
